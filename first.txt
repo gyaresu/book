@@ -36,6 +36,9 @@ just that they need to do as many of them as possible per second and right now t
 
 Dave and his phone are understandably rather than blissfully unaware of any of the subsequent ramifications around Dave's phone broadcasting itself via the built-in Bluetooth wireless tranciever.
 Dave's phone should be more careful. But they never are. Silly phone.
-Bluetooth is a really handy way of connecting two devices wirelessly without needing a router or any other infrastructure. Or at least it should be. What it ends up being is a necessary frustration when you want to use a handsfree headset with your phone. Pairing.    
+Bluetooth is a really handy way of connecting two devices wirelessly without needing a router or any other infrastructure. Or at least it should be. What it ends up being is a necessary frustration when you want to use a handsfree headset with your phone. Pairing is tedious. 
+
+Pairing is a really good way of stopping random strangers using your phone or gadgets. What it's not good at is arguing. Two of the bluetooth radio devices built into Zach's deck were arguing with Dave's phone right now. And they were winning the argument. Mainly through subverting the argument before it could even take place. As with all technology the relatively simple act of getting a headset and a phone to trust each other was actually built on literaly dozens of different programmes
+and protocols working together. 
 
 
