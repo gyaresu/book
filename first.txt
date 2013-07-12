@@ -43,6 +43,20 @@ and protocols working together. All of them written by humans and all of them su
 
 People like Zach who can write a computer programme or understand sets of rules called protocols use the term 'bug'. It's part of the lexicon. Bugs are normal. Bugs are in all programmes larger than "20 goto 10". Bugs are normal. 
 
-Bugs are so normal that even the best software in the world has them. That software autonomously flies all the spacecraft though and everyone knows rocket science is easy.
+## Bugs are so normal that even the best software in the world has them. That software autonomously flies all the spacecraft though and everyone knows rocket science is easy.
 
-But what is a bug? And why can't you just squash them? Well let's take for example that one of the parts of the bluetooth 'stack' of technologies that eventually enable one to link that dorky looking headset up with that maddening generic clamshell phone. Let's say for example that this peice of technology is called the Logical Link Control and Adaptation Protocol (L2CAP) and that this particular chunk of magic is tasked with segmentation and reassembly of on-air packets. 
+But what is a bug? And why can't you just squash them? Well let's take as an example one of the parts of the bluetooth 'stack' of technologies that enables "Daves's Phone" to link securely to a presumably dorky looking headset attached to someone who may or may not be know as 'Dave'. And let's pose for the sake of example that this peice of technology is called the Logical Link Control and Adaptation Protocol (L2CAP) and that this particular chunk of magic is tasked with segmentation and
+reassembly of on-air packets. And let's also 
+say that this particular protocol expected a specific set of information in a specific format. Say for example a request packet that was a particular size and with a particular set of parameters. Now lets say that one of those parameters was something as simple as a 'yes' or a 'no'. In computer speak maybe using a 1 meaning yes or a 0 meaning no. That programme may have been coded to write down that 0 or 1 in a variable called something like 'authenticated_true' and that variable would detirmine
+whether 'Dave's Phone' had been paired successfully. In a perfect world that would be the end of the story but maybe that programme was written by two guys left alone in a small department of a large device manufacturer. Maybe the guys only had six weeks to work on that part of the stack and maybe their programme passed all checks for conforming with the rules of the L2CAP.
+
+And maybe that authenticated_true variable should have been set with a type Boolean instead of being an Unsigned Integer...
+
+One sets variables with a 'type' so that they don't get abused.  Nobody wants their accounting app to end up with a Total of "Cheeseburger!". And variables that are just yes/no are perfectly served by Boolean True or False. But authenticated_true was set as an integer. But not just any integer. A short integer. With no bounds checking...
+
+So now while "Dave's" phone was expecting a yes or no answer it would unfortunately accept numbers other than 0 or 1. In fact, not only would it accept other numbers, it would'nt check to see if the number was redonkulously massive. So that's what Zach's deck did. It incrementally sent worse and worse numbers and checked the response from the phone. Until finally the number was the perfect fit for the whole space that it could fill... plus 1.
+
+Now that the variable authenticated_yes was set to 1 it would talk to the deck. And that bit is so mundane as to be boring. Zach had some custom scripts tying together a bunch of programmes that sorted and categorised data. So the _insert_script_name_ figured out which Operating System "Dave's phone" was using so as to then run the appropriate scripts for sucking all the files and contact lists out of "Dave's phone". Then the data would be entered into 
+Integers are just numbers and 
+Lots of bugs are easy to catch and it's really only with real world testing that you'll find out all the cruel and misguided ways people can treat your software. and depending on the language there are a few different types that may be chosen. In the case of our yes or no example our human could have gone with a 'string' variable but that would be silly. Strings are for variables like smells_are which would let a user
+respond with things like "Yummy!" or "−32768 to +32767
